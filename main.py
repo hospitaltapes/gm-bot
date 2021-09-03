@@ -30,7 +30,7 @@ async def on_message(message):
         if message.author.id == client.user.id:
             return
         if message.content.startswith('gm') or message.content.startswith('Gm'):
-            time.sleep(3)
+            time.sleep(2)
             await message.add_reaction('🌞')
         else:
             return
