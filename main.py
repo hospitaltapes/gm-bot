@@ -6,7 +6,7 @@ written by Dexter Tortoriello (@houses)
 import discord
 from discord.utils import get
 from discord.ext import commands
-
+import time
 
 #INTENTS MAKE IT SO get_user_named() WORKS ~ MUST ENABLE IN DEV PORTAL AS WELL.
 intents = discord.Intents.default()
@@ -30,8 +30,8 @@ async def on_message(message):
         if message.author.id == client.user.id:
             return
         if message.content.startswith('gm') or message.content.startswith('Gm'):
+            time.sleep(3)
             await message.add_reaction('🌞')
-            await message.channel.send('gm')
         else:
             return
     else:
