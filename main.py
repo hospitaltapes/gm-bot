@@ -1,31 +1,32 @@
 """
 🌞 gm
 
-written by Dexter Tortoriello (@houses)
+Replace the bot token and channel id with your own values and the bot 
+will autorespond with an emoji anytime someone says gm.
 """
 import discord
 from discord.utils import get
 from discord.ext import commands
 import time
 
-#INTENTS MAKE IT SO get_user_named() WORKS ~ MUST ENABLE IN DEV PORTAL AS WELL.
+
 intents = discord.Intents.default()
 
-# Bot token from discord developers page
-token = 'ODc3OTU1ODY2MjE5OTA5MTYx.YR6KHg.2C3F_osqoGUjBZ0eq_GZUWB_Ifg'
+# GET A BOT TOKEN FROM https://discord.com/developers/applications
+token = 'PASTE BOT TOKEN HERE' 
 
 # Initializes client.
-client = commands.Bot(command_prefix="--", intents=intents)  # change the prefix according to your needs
+client = commands.Bot(command_prefix="--", intents=intents) 
 
 
-@client.event  # event decorator/wrapper
-# Does something as soon as you connect to the server.
+@client.event 
 async def on_ready():
     print(f"Logged in as {client.user}")
 
 @client.event
 async def on_message(message):
-    if message.channel.id == 880359529068507166:
+    
+    if message.channel.id == '880359529068507166':  # REPLACE THIS WITH THE ID OF THE CHANNEL YOU WANT TO MONITOR
         print('🌞')
         if message.author.id == client.user.id:
             return
